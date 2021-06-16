@@ -5,16 +5,17 @@ import { fifaData } from './fifa.js';
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Practice accessing data by console.log-ing the following pieces of data note, you may want to filter the data first 😉*/
 
+const finals2014 = fifaData.filter(item => item['Year'] === 2014 && item.Stage === 'Final')
 //(a) Home Team name for 2014 world cup final
-console.log('Task 1a',)
+console.log('Task 1a', finals2014[0]['Home Team Name'])
 //(b) Away Team name for 2014 world cup final
-console.log('Task 1b',)
+console.log('Task 1b', finals2014[0]['Away Team Name'])
 //(c) Home Team goals for 2014 world cup final
-console.log('Task 1c',)
+console.log('Task 1c', finals2014[0]['Home Team Goals'])
 //(d) Away Team goals for 2014 world cup final
-console.log('Task 1d',)
+console.log('Task 1d', finals2014[0]['Away Team Goals'])
 //(e) Winner of 2014 world cup final */
-console.log('Task 1e',)
+console.log('Task 1e', finals2014[0]['Win conditions'])
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
@@ -31,10 +32,10 @@ function getFinals(data) {
              return item;
          }
      })
-     return finalTeams;
+      return finalTeams;
  }
  
- console.log(getFinals(fifaData));
+ console.log('Task 2' , getFinals(fifaData));
 
 
 
@@ -131,10 +132,24 @@ function getAverageGoals(getFinalsCB) {
     return Math.round(homeGoalAvg * 100) / 100+" "+Math.round(awayGoalAvg * 100) / 100;
  }
  
- console.log(getAverageGoals(getFinals(fifaData)))
+ console.log(getAverageGoals(getFinals(fifaData)));
 
 
+// const home = [];
+//     const away = [];
 
+//     data.forEach( item => {
+//         home.push(item['Home Team Goals']);
+//         away.push(item['Away Team Goals']);
+//     })
+
+//     const homeTotal = Math.round(home.reduce((total, cur) => total + cur) / home.length);
+//     const awayTotal = Math.round(away.reduce((total, cur) => total + cur) / away.length);
+//     return `Home Goal Average: ${homeTotal}. Away Team Goals Average: ${awayTotal} `
+
+// };
+
+// console.log(getAverageGoals(getFinals(fifaData)));
 
 /// 🥅 STRETCH 🥅 ///
 
